@@ -1,10 +1,10 @@
-import Card from './components/Card'
 import './App.css'
+import Register from './interface/register/Register'
 
 function App() {
   return (
     <>
-    <Card />
+    <Register />
     </>
   )
 }
