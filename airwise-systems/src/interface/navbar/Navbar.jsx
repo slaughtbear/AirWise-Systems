@@ -27,7 +27,7 @@ function Navbar({ parentRef }) {
       onMenuOpenChange={setIsMenuOpen}
       parentRef={parentRef}
       isBordered
-      style={{ backgroundColor: 'rgba(0, 0, 0, 0.750)', backdropFilter: 'blur(5px)' }}
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.800)', backdropFilter: 'blur(6px)' }}
     >
       <NavbarContent>
         <NavbarMenuToggle
