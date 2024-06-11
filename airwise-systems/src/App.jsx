@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import Navbar from "./interface/navbar/Navbar";
 import Banner from "./interface/banner/Banner";
+import Services from "./interface/services/Services";
 import "./App.css"; 
 
 function App() {
@@ -11,36 +12,7 @@ function App() {
       <Navbar parentRef={parentRef} />
       <div>
         <Banner />
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime eaque in saepe consectetur ipsum beatae nesciunt quidem possimus perspiciatis voluptatibus cupiditate animi quibusdam, ullam quisquam veniam dolorum impedit repellendus molestias!</p>
-
+        <Services />
       </div>
     </div>
   );
