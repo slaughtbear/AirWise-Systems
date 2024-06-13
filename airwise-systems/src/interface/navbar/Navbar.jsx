@@ -13,7 +13,7 @@ import {
   Button,
 } from "@nextui-org/react";
 
-function Navbar({ parentRef }) {
+function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
@@ -25,7 +25,6 @@ function Navbar({ parentRef }) {
   return (
     <NextUINavbar
       onMenuOpenChange={setIsMenuOpen}
-      parentRef={parentRef}
       isBordered
       style={{ backgroundColor: 'rgba(0, 0, 0, 0.800)', backdropFilter: 'blur(6px)' }}
     >
