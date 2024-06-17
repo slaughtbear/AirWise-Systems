@@ -1,6 +1,5 @@
 import React from "react";
 import { GrMagic } from "react-icons/gr";
-import PropTypes from "prop-types";
 import {
   Navbar as NextUINavbar,
   NavbarBrand,
@@ -82,9 +81,4 @@ function Navbar() {
     </NextUINavbar>
   );
 }
-
-Navbar.propTypes = {
-  parentRef: PropTypes.object.isRequired,
-};
-
 export default Navbar;
