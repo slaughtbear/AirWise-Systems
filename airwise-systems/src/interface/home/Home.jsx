@@ -4,7 +4,7 @@ import Services from "../services/Services";
 import About from "../about/About";
 import Footer from "../footer/Footer";
 //import Register from "../register/Register";
-import Login from "../login/Login";
+//import Login from "../login/Login";
 
 function Home() {
   return (
@@ -15,7 +15,6 @@ function Home() {
         <About />
         <Services />
         <Footer />
-        <Login />
       </div>
     </div>
   );
