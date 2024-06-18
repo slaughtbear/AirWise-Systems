@@ -20,18 +20,16 @@ function About() {
       </div>
       <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
         <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
-          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-purple-200 uppercase rounded-full bg-teal-accent-400">
+          <p className="work-sans-aesthetic inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-purple-200 uppercase rounded-full bg-teal-accent-400">
             Sobre nosotros
           </p>
-          <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-purple-600 sm:text-4xl sm:leading-none">
-            Valores{" "}
-            <br className="hidden md:block" />
-            que{" "}
-            <span className="inline-block text-deep-purple-accent-400">
-              nos definen
+          <h2 className="kanit-black mb-5 text-3xl font-bold tracking-tight text-purple-600 sm:text-6xl sm:leading-none">
+            Valores que nos{" "}
+            <span className="text-deep-purple-accent-400">
+              definen
             </span>
           </h2>
-          <p className="pr-5 mb-5 text-base text-gray-700 md:text-lg">
+          <p className="work-sans-aesthetic text-base font-bold pr-5 mb-5 text-gray-700 md:text-lg">
             Aseguramos la calidad en nuestros servicios y nos centramos en el
             cliente con soluciones personalizadas. Practicamos transparencia,
             responsabilidad ambiental y fomentamos la colaboración. Nuestra
