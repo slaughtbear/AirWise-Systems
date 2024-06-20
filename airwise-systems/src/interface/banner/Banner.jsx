@@ -6,7 +6,7 @@ function Banner() {
   return (
     <div className="relative flex items-center justify-center overflow-hidden min-h-screen">
       <div className="absolute inset-0 z-10">
-        <div className="absolute top-0 left-0 w-full h-full z-10 bg-black opacity-80 backdrop-filter backdrop-blur-sm"></div>
+        <div className="absolute top-0 left-0 w-full h-full z-10 bg-black opacity-90 backdrop-filter backdrop-blur-sm"></div>
         <Lumiflex />
       </div>
 
@@ -34,7 +34,7 @@ function Banner() {
             <Button
               className="px-4 py-2 text-purple-300 work-sans-aesthetic"
               color="secondary"
-              variant="ghost"
+              variant="flat"
               size="lg"
             >
               MÁS INFORMACIÓN

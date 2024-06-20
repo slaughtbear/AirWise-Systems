@@ -23,7 +23,7 @@ function About() {
           <p className="work-sans-aesthetic inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-purple-200 uppercase rounded-full bg-teal-accent-400">
             Sobre nosotros
           </p>
-          <h2 className="kanit-black mb-5 text-3xl font-bold tracking-tight text-purple-600 sm:text-6xl sm:leading-none">
+          <h2 className="kanit-black mb-3 text-3xl font-bold tracking-tight text-purple-600 sm:text-6xl sm:leading-none">
             Valores que nos{" "}
             <span className="text-deep-purple-accent-400">
               definen

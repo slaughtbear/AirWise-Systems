@@ -3,7 +3,12 @@ import CardDos from "./assets/C2.jpg";
 import CardTres from "./assets/C3.jpg";
 import CardCuatro from "./assets/C4.jpg";
 import { Image } from "@nextui-org/image";
-import { MdTrackChanges, MdAutorenew, MdCrisisAlert, MdEqualizer } from "react-icons/md";
+import {
+  MdTrackChanges,
+  MdAutorenew,
+  MdCrisisAlert,
+  MdEqualizer,
+} from "react-icons/md";
 
 function Services() {
   return (
@@ -12,14 +17,17 @@ function Services() {
         <div className="relative">
           <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="ml-auto lg:col-start-2 lg:max-w-2xl">
-              <p className="text-base font-semibold leading-6 text-purple-200 uppercase">
+              <p className="work-sans-aesthetic text-xs mx-3 font-semibold leading-6 text-purple-200 uppercase">
                 Servicios
               </p>
-              <h4 className="mt-2 text-2xl font-extrabold leading-8 text-purple-600 dark:text-white sm:text-3xl sm:leading-9">
+              <h1 className="kanit-black mt-2 font-bold sm:text-4xl lg:text-6xl leading-8 sm:leading-10 text-purple-600 dark:text-white">
                 Innovando para un ambiente más seguro
-              </h4>
-              <p className="mt-4 text-lg leading-6 text-gray-500 dark:text-gray-300">
-                Ofrecemos soluciones automatizadas para tu hogar o empresa, proporcionando un monitoreo continuo y preciso de la calidad del aire.
+              </h1>
+
+              <p className="work-sans-aesthetic mt-5 text-lg leading-6 text-gray-500 dark:text-gray-300">
+                Ofrecemos soluciones automatizadas para tu hogar o empresa,
+                proporcionando un monitoreo continuo y preciso de la calidad del
+                aire.
               </p>
               <ul className="gap-6 mt-8 md:grid md:grid-cols-2">
                 <li className="mt-6 lg:mt-0">

@@ -25,6 +25,7 @@ function Navbar() {
     <NextUINavbar
       onMenuOpenChange={setIsMenuOpen}
       isBordered
+      className="work-sans-aesthetic"
       style={{ backgroundColor: 'rgba(0, 0, 0, 0.800)', backdropFilter: 'blur(6px)' }}
     >
       <NavbarContent>
@@ -34,7 +35,7 @@ function Navbar() {
         />
         <NavbarBrand>
         <GrMagic className="text-purple-500"/>
-          <p className="font-bold text-inherit pl-3 text-white">AWS</p>
+          <p className="font-bold kanit-black text-inherit pl-3 text-white">AWS</p>
         </NavbarBrand>
       </NavbarContent>
 
