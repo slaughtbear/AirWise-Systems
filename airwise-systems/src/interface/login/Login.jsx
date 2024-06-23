@@ -1,66 +1,104 @@
-import { Novatrix } from "uvcanvas";
-import TextInput from "../../components/Inputs/TextInput";
+//import TextInput from "../../components/Inputs/TextInput";
+import bgLogin from "./assets/bgLogin.jpg";
 import PasswordInput from "../../components/Inputs/PasswordInput";
-import { Button } from "@nextui-org/react";
+import { GrMagic } from "react-icons/gr";
+import { Input } from "@nextui-org/input";
+import { Button } from "@nextui-org/button";
 
 function Login() {
   return (
-    <div className="font-mono bg-stone-950 min-h-screen flex items-center justify-center">
-      <div className="container mx-auto">
-        <div className="flex justify-center px-6 my-12">
-          <div className="w-full xl:w-3/4 lg:w-11/12 flex">
-            <div className="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg relative">
-              <Novatrix
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  background: "transparent",
-                }}
-              />
+    <section className="bg-stone-950">
+      <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+        <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
+          <img
+            alt=""
+            src={bgLogin}
+            className="absolute inset-0 h-full w-full object-cover opacity-80"
+          />
+
+          <div className="hidden lg:relative lg:block lg:p-12">
+            <a className="block text-white" href="#">
+              <span className="sr-only">Home</span>
+              <GrMagic className="w-9 h-9 text-purple-400" />
+            </a>
+
+            <h2 className="uppercase font-bold kanit-black mt-6 text-2xl text-purple-400 sm:text-3xl md:text-4xl">
+              Air-Wise Systems
+            </h2>
+
+            <p className="mt-4 work-sans-aesthetic text-white/90">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+              nam dolorum aliquam, quibusdam aperiam voluptatum.
+            </p>
+          </div>
+        </section>
+
+        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+          <div className="max-w-xl lg:max-w-3xl">
+            <div className="relative mt-1 block lg:hidden">
+              <a
+                className="inline-flex items-center justify-center size-30 rounded-full bg-stone-950 text-blue-600 sm:size-20"
+                href="#"
+              >
+                <GrMagic className="text-purple-500 w-8 h-8 sm:h-8"/>
+              </a>
+
+              <h1 className="uppercase kanit-black mt-2 text-2xl font-bold text-purple-600 sm:text-3xl md:text-4xl">
+                Air-Wise Systems
+              </h1>
+
+              <p className="mt-4 leading-relaxed text-gray-500">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
+              </p>
             </div>
 
-            <div className="w-full lg:w-1/2 bg-stone-900 p-5 rounded-lg lg:rounded-l-none">
-              <h3 className="pt-4 text-2xl text-center text-purple-500">
-                Bienvenido
-              </h3>
-              <form className="px-8 pt-6 pb-8 mb-4 bg-stone-900 rounded">
-                <div className="mb-4">
-                  <TextInput className="" label="Nombre de usuario" />
-                </div>
-                <div className="mb-4">
-                  <PasswordInput
-                    label="Contraseña"
-                    className="px-10"
-                  />
-                </div>
-                <div className="mb-6 text-center">
-                  <Button color="secondary" variant="flat">
-                    Iniciar sesión
-                  </Button>
-                </div>
-                <hr className="mb-6 border-t" />
-                <div className="text-center">
-                  <a
-                    className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                    href="#"
-                  >
-                    Create an Account!
+            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+              <div className="col-span-6">
+                <Input
+                  variant="bordered"
+                  color="secondary"
+                  label="Email"
+                  type="email"
+                  isClearable
+                  required
+                  size="lg"
+                  className="text-purple-400 work-sans-aesthetic"
+                  classNames={{
+                    label: "text-purple-400",
+                    input: "text-purple-400",
+                  }}
+                />
+              </div>
+
+              <div className="col-span-6">
+                <PasswordInput label="Contraseña" />
+              </div>
+
+
+              <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+                <Button
+                  className="text-white inline-block shrink-0"
+                  color="secondary"
+                  variant="flat"
+                  size="lg"
+                >
+                  Iniciar sesión
+                </Button>
+
+                <p className="work-sans-aesthetic mt-4 text-sm text-gray-500 sm:mt-0">
+                  ¿No tienes una cuenta?
+                  <a href="#" className="text-purple-700 underline ml-2">
+                    Regístrate
                   </a>
-                </div>
-                <div className="text-center">
-                  <a
-                    className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                    href="#"
-                  >
-                    Forgot Password?
-                  </a>
-                </div>
-              </form>
-            </div>
+                  .
+                </p>
+              </div>
+            </form>
           </div>
-        </div>
+        </main>
       </div>
-    </div>
+    </section>
   );
 }
 

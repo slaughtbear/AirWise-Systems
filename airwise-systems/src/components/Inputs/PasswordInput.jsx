@@ -11,20 +11,24 @@ function PasswordInput({ label }) {
 
   return (
     <Input
-      className="text-white"
+      className="text-purple-400 work-sans-aesthetic"
       type={isVisible ? "text" : "password"}
-      variant="underlined"
+      variant="bordered"
+      color="secondary"
+      size="lg"
       label={label}
       endContent={
         <button className="focus:outline-none" type="button" onClick={toggleVisibility}>
           {isVisible ? (
-            <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+            <EyeSlashFilledIcon className="h-5 w-5 text-2xl pointer-events-none" />
           ) : (
-            <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+            <EyeFilledIcon className="h-5 w-5 text-2xl pointer-events-none" />
           )}
         </button>
       }
-      classNames="text-purple-500"
+      classNames={{
+        label: "text-purple-400",
+      }}
     />
   );
 }

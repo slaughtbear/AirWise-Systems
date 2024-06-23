@@ -14,3 +14,12 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  /* Ejemplo de clases de estado dinámicas en Tailwind CSS */
+.border-purple-500 {
+  border-color: #8a3dfc; /* Color morado personalizado */
+}
+
+.border-purple-500:focus {
+  border-color: #8a3dfc; /* Color morado cuando el input está enfocado */
+}

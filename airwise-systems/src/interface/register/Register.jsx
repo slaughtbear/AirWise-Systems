@@ -1,67 +1,117 @@
-import bgRegister from "../../assets/bg-register.svg";
-import { GrMagic } from "react-icons/gr";
-import { Button } from "@nextui-org/button";
+//import TextInput from "../../components/Inputs/TextInput";
+import bgLogin from "../login/assets/bgLogin.jpg";
 import PasswordInput from "../../components/Inputs/PasswordInput";
-import TextInput from "../../components/Inputs/TextInput";
-import EmailInput from "../../components/Inputs/EmailInput";
+import { GrMagic } from "react-icons/gr";
+import { Input } from "@nextui-org/input";
+import { Button } from "@nextui-org/button";
 
 function Register() {
   return (
-    <section className="bg-neutral-950 h-screen">
+    <section className="bg-stone-950">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-        <aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
+        <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
           <img
             alt=""
-            src={bgRegister}
-            className="absolute inset-0 h-full w-full object-cover"
+            src={bgLogin}
+            className="absolute inset-0 h-full w-full object-cover opacity-80"
           />
-        </aside>
 
-        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
-          <div className="max-w-xl lg:max-w-3xl">
-            <GrMagic className="h-8 w-8 sm:h-10 sm:w-10 text-purple-500" viewBox="0 0 28 24" />
+          <div className="hidden lg:relative lg:block lg:p-12">
+            <a className="block text-white" href="#">
+              <span className="sr-only">Home</span>
+              <GrMagic className="w-9 h-9 text-purple-400" />
+            </a>
 
-            <h1 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              Bienvenido a AirWise Systems
-            </h1>
+            <h2 className="uppercase font-bold kanit-black mt-6 text-2xl text-purple-400 sm:text-3xl md:text-4xl">
+              Air-Wise Systems
+            </h2>
 
-            <p className="mt-4 leading-relaxed text-gray-500">
+            <p className="mt-4 work-sans-aesthetic text-white/90">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
               nam dolorum aliquam, quibusdam aperiam voluptatum.
             </p>
+          </div>
+        </section>
+
+        <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+          <div className="max-w-xl lg:max-w-3xl">
+            <div className="relative block lg:hidden">
+              <a
+                className="inline-flex items-center justify-center rounded-full bg-stone-950 text-blue-600 sm:size-20"
+                href="#"
+              >
+                <GrMagic className="text-purple-500 w-8 h-8 sm:h-10"/>
+              </a>
+
+              <h1 className="uppercase kanit-black mt-2 text-2xl font-bold text-purple-600 sm:text-3xl md:text-4xl">
+                Air-Wise Systems
+              </h1>
+
+              <p className="mt-4 leading-relaxed text-gray-500">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
+              </p>
+            </div>
 
             <form action="#" className="mt-8 grid grid-cols-6 gap-6">
               <div className="col-span-6">
-                <TextInput label="Nombre de usuario" />
+                <Input
+                  variant="bordered"
+                  color="secondary"
+                  label="Usuario"
+                  type="text"
+                  isClearable
+                  required
+                  size="lg"
+                  className="text-purple-400 work-sans-aesthetic"
+                  classNames={{
+                    label: "text-purple-400",
+                    input: "text-purple-400",
+                  }}
+                />
               </div>
 
               <div className="col-span-6">
-                <EmailInput label="Correo electrónico" />
+                <Input
+                  variant="bordered"
+                  color="secondary"
+                  label="Email"
+                  type="email"
+                  isClearable
+                  required
+                  size="lg"
+                  className="text-purple-400 work-sans-aesthetic"
+                  classNames={{
+                    label: "text-purple-400",
+                    input: "text-purple-400",
+                  }}
+                />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <PasswordInput label="Contraseña" className="w-full p-3 rounded-md" />
+                <PasswordInput label="Contraseña" />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <PasswordInput label="Confirmar contraseña" className="w-full p-3 rounded-md" />
+                <PasswordInput label="Confirmar contraseña" />
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <Button
+                  className="text-white inline-block shrink-0"
                   color="secondary"
-                  variant="ghost"
-                  className="inline-block shrink-0 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+                  variant="flat"
+                  size="lg"
                 >
-                  Crear cuenta
+                  Registrarme
                 </Button>
 
-                <p className="mt-4 text-sm text-gray-500 sm:mt-0">
+                <p className="work-sans-aesthetic mt-4 text-sm text-gray-500 sm:mt-0">
                   ¿Ya tienes una cuenta?
-                  <a href="#" className="text-gray-700 underline pl-1">
+                  <a href="#" className="text-purple-700 underline ml-2">
                     Inicia sesión
                   </a>
-                 .
+                  .
                 </p>
               </div>
             </form>

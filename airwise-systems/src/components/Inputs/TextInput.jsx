@@ -8,13 +8,15 @@ function TextInput({ label }) {
 
   return (
     <Input
-      className="text-white"
       type="text"
       variant="underlined"
-      isClearable
+      clearable
       label={label}
-      isRequired
-      classNames="text-purple-500"
+      required
+      classNames={{
+        label: "text-purple-500",
+        inputWrapper: "border-purple-500",
+      }}
     />
   );
 }

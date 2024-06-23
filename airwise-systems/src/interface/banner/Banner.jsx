@@ -34,7 +34,7 @@ function Banner() {
             <Button
               className="px-4 py-2 text-purple-300 work-sans-aesthetic"
               color="secondary"
-              variant="flat"
+              variant="ghost"
               size="lg"
             >
               MÁS INFORMACIÓN
