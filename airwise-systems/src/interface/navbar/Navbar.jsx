@@ -1,5 +1,6 @@
 import React from "react";
 import { GrMagic } from "react-icons/gr";
+import { Link } from 'react-router-dom';
 import {
   Navbar as NextUINavbar,
   NavbarBrand,
@@ -8,7 +9,6 @@ import {
   NavbarMenu,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
 } from "@nextui-org/react";
 
@@ -41,12 +41,12 @@ function Navbar() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link className="text-white" href="#">
+          <Link className="text-white">
             Acerca de
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link className="text-purple-500" href="#" aria-current="page">
+          <Link className="text-purple-500" aria-current="page">
             Servicios
           </Link>
         </NavbarItem>
@@ -58,10 +58,10 @@ function Navbar() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link className="text-purple-500" href="#">Iniciar sesión</Link>
+          <Link to="/login" className="text-purple-500">Iniciar sesión</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="secondary" className="text-purple-400" href="#" variant="flat">
+          <Button as={Link} to="/register" color="secondary" className="text-purple-400" variant="flat">
             Registrarse
           </Button>
         </NavbarItem>

@@ -4,6 +4,7 @@ import PasswordInput from "../../components/Inputs/PasswordInput";
 import { GrMagic } from "react-icons/gr";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
+import { Link } from "react-router-dom";
 
 function Register() {
   return (
@@ -40,7 +41,7 @@ function Register() {
                 className="inline-flex items-center justify-center rounded-full bg-stone-950 text-blue-600 sm:size-20"
                 href="#"
               >
-                <GrMagic className="text-purple-500 w-8 h-8 sm:h-10"/>
+                <GrMagic className="text-purple-500 w-8 h-8 sm:h-10" />
               </a>
 
               <h1 className="uppercase kanit-black mt-2 text-2xl font-bold text-purple-600 sm:text-3xl md:text-4xl">
@@ -108,10 +109,9 @@ function Register() {
 
                 <p className="work-sans-aesthetic mt-4 text-sm text-gray-500 sm:mt-0">
                   ¿Ya tienes una cuenta?
-                  <a href="#" className="text-purple-700 underline ml-2">
+                  <Link to="/login" className="text-purple-700 underline ml-2">
                     Inicia sesión
-                  </a>
-                  .
+                  </Link>
                 </p>
               </div>
             </form>

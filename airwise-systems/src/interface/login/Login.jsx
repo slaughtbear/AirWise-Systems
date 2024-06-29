@@ -4,6 +4,7 @@ import PasswordInput from "../../components/Inputs/PasswordInput";
 import { GrMagic } from "react-icons/gr";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -40,7 +41,7 @@ function Login() {
                 className="inline-flex items-center justify-center size-30 rounded-full bg-stone-950 text-blue-600 sm:size-20"
                 href="#"
               >
-                <GrMagic className="text-purple-500 w-8 h-8 sm:h-8"/>
+                <GrMagic className="text-purple-500 w-8 h-8 sm:h-8" />
               </a>
 
               <h1 className="uppercase kanit-black mt-2 text-2xl font-bold text-purple-600 sm:text-3xl md:text-4xl">
@@ -53,7 +54,7 @@ function Login() {
               </p>
             </div>
 
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+            <form action="#" id="" className="mt-8 grid grid-cols-6 gap-6">
               <div className="col-span-6">
                 <Input
                   variant="bordered"
@@ -75,7 +76,6 @@ function Login() {
                 <PasswordInput label="Contraseña" />
               </div>
 
-
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <Button
                   className="text-white inline-block shrink-0"
@@ -88,10 +88,12 @@ function Login() {
 
                 <p className="work-sans-aesthetic mt-4 text-sm text-gray-500 sm:mt-0">
                   ¿No tienes una cuenta?
-                  <a href="#" className="text-purple-700 underline ml-2">
+                  <Link
+                    to="/register"
+                    className="text-purple-700 underline ml-2"
+                  >
                     Regístrate
-                  </a>
-                  .
+                  </Link>
                 </p>
               </div>
             </form>
