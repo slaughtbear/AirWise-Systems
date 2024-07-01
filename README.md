@@ -18,12 +18,12 @@ El propósito de esta aplicación es brindarle a nuestros usuarios la posibilida
 `npm run dev`
 ### Dependencias principales
 - **firebase:** Conexión con Firebase.
-- **react-router-dom: **Enrutamiento en React.
-- **nextui-org/react: **Componentes de UI.
+- **react-router-dom:** Enrutamiento en React.
+- **nextui-org/react:** Componentes de UI.
 - **react-icons:** Iconos para React.
-- **uvcanvas: **Renderizado de gráficos.
+- **uvcanvas:** Renderizado de gráficos.
 ### Dependencias de desarrollo
-- **vite: **Herramienta de construcción y desarrollo.
-- **tailwindcss: **Framework de CSS.
-- **autoprefixer y postcss: **Herramientas para el procesamiento de CSS.
+- **vite:** Herramienta de construcción y desarrollo.
+- **tailwindcss:** Framework de CSS.
+- **autoprefixer y postcss:** Herramientas para el procesamiento de CSS.
 
