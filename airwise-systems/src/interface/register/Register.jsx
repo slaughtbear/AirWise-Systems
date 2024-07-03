@@ -1,4 +1,6 @@
 //import TextInput from "../../components/Inputs/TextInput";
+import { useForm } from "react-hook-form"; // Librería que permite gestionar el estado y la validación de los formularios
+import { useState } from "react";
 import bgLogin from "../login/assets/bgLogin.jpg";
 import PasswordInput from "../../components/Inputs/PasswordInput";
 import { GrMagic } from "react-icons/gr";
@@ -7,6 +9,41 @@ import { Button } from "@nextui-org/button";
 import { Link } from "react-router-dom";
 
 function Register() {
+  // Inicialización del estado "userInfo", objeto que contiene:
+  const [userInfo, setUserInfo] = useState({
+    // Propiedades del formulario que se inicializan como vacías
+    signUpUser: "",
+    signUpEmail: "",
+    signUpPassword: "",
+    signUpConfirmPass: "",
+  });
+
+  // Inicialización del hook useForm que registra los datos proporcionados por el usuario
+  // register observa todo elemento dentro del formulario, vía por la cual la librería sabe que cambios se producen en cada campo
+  // handleSubmit recopila los valores finales de cada elemento del formulario y los envía como un objeto
+  const { register, handleSubmit } = useForm();
+
+  // onSubmit() es un manejador de datos envíados en el formulario
+  // (userInfo) es el parámetro que contiene los datos recopilados cuando son enviados por React Hook Form
+  const onSubmit = (userInfo) => console.log(userInfo); // Se imprimen en consola los datos para verificar que los datos se estén enviando
+
+  // Objeto que almacena mensajes de errores
+  const messages = {
+    req: "Este campo es obligatorio",
+    username:
+      "El nombre de usuario debe tener al menos una letra y puede incluir números, guiones bajos y guiones",
+    email: "Debes introducir una dirección correcta",
+    password: "Contraseña incorrecta"
+  };
+
+  // Expresiones regulares
+  const patterns = {
+    username: /^(?=.*[a-zA-Z])[a-zA-Z0-9_-]{3,20}$/, // Asegura que el nombre de usuario contenga al menos una letra y puede incluir números, guiones bajos y guiones
+    email:
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, // Valida direcciones de correo electrónico que siguen el formato estándar
+    password: "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/"
+  };
+
   return (
     <section className="bg-stone-950">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
@@ -54,15 +91,24 @@ function Register() {
               </p>
             </div>
 
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="mt-8 grid grid-cols-6 gap-6"
+            >
               <div className="col-span-6">
                 <Input
+                  {...register("signUpUser", {
+                    required: messages.req,
+                    pattern: {
+                      value: patterns.username,
+                      message: messages.username,
+                    },
+                  })}
                   variant="bordered"
                   color="secondary"
                   label="Usuario"
                   type="text"
                   isClearable
-                  required
                   size="lg"
                   className="text-purple-400 work-sans-aesthetic"
                   classNames={{
@@ -74,12 +120,18 @@ function Register() {
 
               <div className="col-span-6">
                 <Input
+                  {...register("signUpEmail", {
+                    required: messages.required,
+                    pattern: {
+                      value: patterns.email,
+                      message: messages.email,
+                    },
+                  })}
                   variant="bordered"
                   color="secondary"
                   label="Email"
                   type="email"
                   isClearable
-                  required
                   size="lg"
                   className="text-purple-400 work-sans-aesthetic"
                   classNames={{
@@ -90,15 +142,24 @@ function Register() {
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <PasswordInput label="Contraseña" />
+                <PasswordInput
+                  register={register}
+                  registerName="signUpPassword,"
+                  label="Contraseña"
+                />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <PasswordInput label="Confirmar contraseña" />
+                <PasswordInput
+                  register={register}
+                  registerName="signUpConfirmPass"
+                  label="Confirmar contraseña"
+                />
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <Button
+                  type="submit"
                   className="text-white inline-block shrink-0"
                   color="secondary"
                   variant="flat"
