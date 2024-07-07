@@ -19,9 +19,14 @@ function Register() {
   });
 
   // Inicialización del hook useForm que registra los datos proporcionados por el usuario
-  // register observa todo elemento dentro del formulario, vía por la cual la librería sabe que cambios se producen en cada campo
-  // handleSubmit recopila los valores finales de cada elemento del formulario y los envía como un objeto
-  const { register, handleSubmit } = useForm();
+  // register: observa todo elemento dentro del formulario, vía por la cual la librería sabe que cambios se producen en cada campo
+  // handleSubmit: recopila los valores finales de cada elemento del formulario y los envía como un objeto
+  // errors: actualiza la información de aquellos campos que no han superado cualquiera de las validaciones se hayan definido
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   // onSubmit() es un manejador de datos envíados en el formulario
   // (userInfo) es el parámetro que contiene los datos recopilados cuando son enviados por React Hook Form
@@ -33,7 +38,7 @@ function Register() {
     username:
       "El nombre de usuario debe tener al menos una letra y puede incluir números, guiones bajos y guiones",
     email: "Debes introducir una dirección correcta",
-    password: "Contraseña incorrecta"
+    password: "Contraseña incorrecta",
   };
 
   // Expresiones regulares
@@ -41,7 +46,6 @@ function Register() {
     username: /^(?=.*[a-zA-Z])[a-zA-Z0-9_-]{3,20}$/, // Asegura que el nombre de usuario contenga al menos una letra y puede incluir números, guiones bajos y guiones
     email:
       /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, // Valida direcciones de correo electrónico que siguen el formato estándar
-    password: "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/"
   };
 
   return (
@@ -116,12 +120,17 @@ function Register() {
                     input: "text-purple-400",
                   }}
                 />
+                {errors.signUpUser && (
+                  <span className="text-red-600">
+                    {errors.signUpUser.message}
+                  </span>
+                )}
               </div>
 
               <div className="col-span-6">
                 <Input
                   {...register("signUpEmail", {
-                    required: messages.required,
+                    required: messages.req,
                     pattern: {
                       value: patterns.email,
                       message: messages.email,
@@ -139,14 +148,24 @@ function Register() {
                     input: "text-purple-400",
                   }}
                 />
+                {errors.signUpEmail && (
+                  <span className="text-red-600">
+                    {errors.signUpEmail.message}
+                  </span>
+                )}
               </div>
 
               <div className="col-span-6 sm:col-span-3">
                 <PasswordInput
                   register={register}
-                  registerName="signUpPassword,"
+                  registerName="signUpPassword"
                   label="Contraseña"
                 />
+                {errors.signUpPassword && (
+                  <span className="text-red-600">
+                    {errors.signUpPassword.message}
+                  </span>
+                )}
               </div>
 
               <div className="col-span-6 sm:col-span-3">
@@ -155,6 +174,11 @@ function Register() {
                   registerName="signUpConfirmPass"
                   label="Confirmar contraseña"
                 />
+                {errors.signUpConfirmPass && (
+                  <span className="text-red-600">
+                    {errors.signUpConfirmPass.message}
+                  </span>
+                )}
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">

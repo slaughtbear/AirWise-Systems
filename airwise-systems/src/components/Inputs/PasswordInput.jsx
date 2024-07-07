@@ -19,7 +19,7 @@ function PasswordInput({ label, register, registerName }) {
 
   // Expresiones regulares
   const patterns = {
-    password: "/^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$/",
+    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
   };
 
   return (
