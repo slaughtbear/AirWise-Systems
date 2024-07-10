@@ -1,14 +1,21 @@
-//import TextInput from "../../components/Inputs/TextInput";
-import { useForm } from "react-hook-form"; // Librería que permite gestionar el estado y la validación de los formularios
 import { useState } from "react";
-import bgLogin from "../login/assets/bgLogin.jpg";
-import PasswordInput from "../../components/Inputs/PasswordInput";
+import { useForm } from "react-hook-form"; // Librería que permite gestionar el estado y la validación de los formularios
+import { ToastContainer, toast, Bounce } from "react-toastify"; // Librería que permite mostrar mensajes en el componente
+import { Link, useNavigate } from "react-router-dom"; // useNavigate se usa para implementar navegación dentro del componente
+import { auth } from "../../firebase/FirebaseConfig"; // Servicio de autenticación de Firebase
+import { createUserWithEmailAndPassword } from "firebase/auth"; // Servicio para registrar usuarios con Firebase
 import { GrMagic } from "react-icons/gr";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
-import { Link } from "react-router-dom";
+import bgLogin from "../login/assets/bgLogin.jpg";
+import PasswordInput from "../../components/Inputs/PasswordInput";
+import "react-toastify/dist/ReactToastify.css"; // Estilos de Toastify
+
 
 function Register() {
+  // Uso de navegación de rutas dentro del componente
+  const navigate = useNavigate();
+
   // Inicialización del estado "userInfo", objeto que contiene:
   const [userInfo, setUserInfo] = useState({
     // Propiedades del formulario que se inicializan como vacías
@@ -29,8 +36,40 @@ function Register() {
   } = useForm();
 
   // onSubmit() es un manejador de datos envíados en el formulario
-  // (userInfo) es el parámetro que contiene los datos recopilados cuando son enviados por React Hook Form
-  const onSubmit = (userInfo) => console.log(userInfo); // Se imprimen en consola los datos para verificar que los datos se estén enviando
+  // (data) es el parámetro que contiene los datos recopilados cuando son enviados por React Hook Form
+  const onSubmit = async (data) => {
+    const { signUpEmail, signUpPassword } = data;
+    try {
+      await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
+      toast.success("Usuario registrado correctamente", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      setTimeout(() => {
+        navigate("/login");
+      }, 4000);
+    } catch (error) {
+      console.error("Error registrando usuario: ", error.message);
+      toast.error("Error registrando usuario: ", error.message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+    }
+  };
 
   // Objeto que almacena mensajes de errores
   const messages = {
@@ -50,6 +89,7 @@ function Register() {
 
   return (
     <section className="bg-stone-950">
+      <ToastContainer />
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
         <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
           <img
