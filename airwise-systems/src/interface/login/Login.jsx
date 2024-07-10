@@ -1,12 +1,60 @@
-//import TextInput from "../../components/Inputs/TextInput";
-import bgLogin from "./assets/bgLogin.jpg";
-import PasswordInput from "../../components/Inputs/PasswordInput";
+import { useState } from "react";
+import { useForm } from "react-hook-form"; // Librería que permite gestionar el estado y la validación de los formularios
+import { auth } from "../../firebase/FirebaseConfig"; // Servicio de autenticación de Firebase
+import {signInWithEmailAndPassword } from "firebase/auth"; // Servicio para iniciar sesión con Firebase
+import { Link, useNavigate } from "react-router-dom"; // useNavigate se usa para implementar navegación dentro del componente
 import { GrMagic } from "react-icons/gr";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
-import { Link } from "react-router-dom";
+import bgLogin from "./assets/bgLogin.jpg";
+import PasswordInput from "../../components/Inputs/PasswordInput";
 
 function Login() {
+  const navigate = useNavigate();
+  // Inicialización del estado "userInfo", objeto que contiene:
+  const [userInfo, setUserInfo] = useState({
+    // Propiedades del formulario que se inicializan como vacías
+    signUpEmail: "",
+    signUpPassword: "",
+  });
+
+  // Inicialización del hook useForm que registra los datos proporcionados por el usuario
+  // register: observa todo elemento dentro del formulario, vía por la cual la librería sabe que cambios se producen en cada campo
+  // handleSubmit: recopila los valores finales de cada elemento del formulario y los envía como un objeto
+  // errors: actualiza la información de aquellos campos que no han superado cualquiera de las validaciones se hayan definido
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  // Objeto que almacena mensajes de errores
+  const messages = {
+    req: "Este campo es obligatorio",
+    email: "Debes introducir una dirección correcta",
+    password: "Contraseña incorrecta",
+  };
+
+  // Expresiones regulares
+  const patterns = {
+    username: /^(?=.*[a-zA-Z])[a-zA-Z0-9_-]{3,20}$/, // Asegura que el nombre de usuario contenga al menos una letra y puede incluir números, guiones bajos y guiones
+    email:
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, // Valida direcciones de correo electrónico que siguen el formato estándar
+  };
+
+  // onSubmit() es un manejador de datos envíados en el formulario
+  // (data) es el parámetro que contiene los datos recopilados cuando son enviados por React Hook Form
+  const onSubmit = async (data) => {
+    const { signUpEmail, signUpPassword } = data;
+    try {
+      await signInWithEmailAndPassword(auth, signUpEmail, signUpPassword);
+      // Redirige a la página de dashboard
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Error iniciando sesión: ", error.message);
+    }
+  };
+
   return (
     <section className="bg-stone-950">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
@@ -54,9 +102,19 @@ function Login() {
               </p>
             </div>
 
-            <form className="mt-8 grid grid-cols-6 gap-6">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="mt-8 grid grid-cols-6 gap-6"
+            >
               <div className="col-span-6">
                 <Input
+                  {...register("signUpEmail", {
+                    required: messages.req,
+                    pattern: {
+                      value: patterns.email,
+                      message: messages.email,
+                    },
+                  })}
                   name="signUpEmail"
                   type="email"
                   label="Email"
@@ -71,14 +129,24 @@ function Login() {
                     input: "text-purple-400",
                   }}
                 />
+                {errors.signUpEmail && (
+                  <span className="text-red-600">
+                    {errors.signUpEmail.message}
+                  </span>
+                )}
               </div>
 
               <div className="col-span-6">
                 <PasswordInput
-                  name="signUpPassword"
+                  register={register}
+                  registerName="signUpPassword"
                   label="Contraseña"
-                  isRequired
                 />
+                {errors.signUpPassword && (
+                  <span className="text-red-600">
+                    {errors.signUpPassword.message}
+                  </span>
+                )}
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
