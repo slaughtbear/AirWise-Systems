@@ -11,13 +11,6 @@ import PasswordInput from "../../components/Inputs/PasswordInput";
 
 function Login() {
   const navigate = useNavigate();
-  // Inicialización del estado "userInfo", objeto que contiene:
-  const [userInfo, setUserInfo] = useState({
-    // Propiedades del formulario que se inicializan como vacías
-    signUpEmail: "",
-    signUpPassword: "",
-  });
-
   // Inicialización del hook useForm que registra los datos proporcionados por el usuario
   // register: observa todo elemento dentro del formulario, vía por la cual la librería sabe que cambios se producen en cada campo
   // handleSubmit: recopila los valores finales de cada elemento del formulario y los envía como un objeto

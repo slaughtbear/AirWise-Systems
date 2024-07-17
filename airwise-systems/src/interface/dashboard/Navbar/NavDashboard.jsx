@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GrMagic } from "react-icons/gr";
 import {
   Navbar as NextUINavbar,
@@ -15,11 +15,32 @@ import {
   DropdownMenu,
   Avatar,
 } from "@nextui-org/react";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebase/FirebaseConfig";
+import { useNavigate } from "react-router-dom";
 
 function NavDashboard() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+  const [username, setUsername] = useState(""); // Estado para almacenar el nombre de usuario
   const menuItems = ["Acerca de", "Servicios", "Contacto"];
+  const navigate = useNavigate(); // Crear una instancia de useNavigate
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (error) {
+      console.error("Error signing out: ", error);
+    }
+  };
+
+    // Obtener el nombre de usuario al montar el componente
+    useEffect(() => {
+      const user = auth.currentUser;
+      if (user) {
+        setUsername(user.displayName || user.email); // Asignar el nombre de usuario o correo electrónico si no hay nombre
+      }
+    }, []);
 
   return (
     <NextUINavbar
@@ -74,14 +95,24 @@ function NavDashboard() {
               src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
             />
           </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat" className="text-purple-300" style={{ backgroundColor: 'rgba(0, 0, 0, 0.750)', backdropFilter: 'blur(5px)' }}>
+          <DropdownMenu
+            aria-label="Profile Actions"
+            variant="flat"
+            className="text-purple-300"
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.750)",
+              backdropFilter: "blur(5px)",
+            }}
+          >
             <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="work-sans-aesthetic text-purple-500 font-extrabold">Conectado como</p>
-              <p className="font-semibold">zoey@example.com</p>
+              <p className="work-sans-aesthetic text-purple-500 font-extrabold">
+                Conectado como
+              </p>
+              <p className="font-semibold">{username}</p>
             </DropdownItem>
             <DropdownItem key="settings">Configuraciones</DropdownItem>
             <DropdownItem key="analytics">Analíticas</DropdownItem>
-            <DropdownItem key="logout" color="danger">
+            <DropdownItem key="logout" color="danger" onClick={handleLogout}>
               Cerrar sesión
             </DropdownItem>
           </DropdownMenu>

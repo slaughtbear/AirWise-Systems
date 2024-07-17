@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"; // Librería que permite gestionar el
 import { ToastContainer, toast, Bounce } from "react-toastify"; // Librería que permite mostrar mensajes en el componente
 import { Link, useNavigate } from "react-router-dom"; // useNavigate se usa para implementar navegación dentro del componente
 import { auth } from "../../firebase/FirebaseConfig"; // Servicio de autenticación de Firebase
-import { createUserWithEmailAndPassword } from "firebase/auth"; // Servicio para registrar usuarios con Firebase
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Servicio para registrar usuarios con Firebase
 import { GrMagic } from "react-icons/gr";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
@@ -38,9 +38,11 @@ function Register() {
   // onSubmit() es un manejador de datos envíados en el formulario
   // (data) es el parámetro que contiene los datos recopilados cuando son enviados por React Hook Form
   const onSubmit = async (data) => {
-    const { signUpEmail, signUpPassword } = data;
-    try {
-      await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
+    const { signUpEmail, signUpPassword, signUpUser } = data;
+    try { // userCredential es un objeto que contiene información del usuario registrado
+      const userCredential = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword); // createUserWithEmailAndPassword Registra al usuario con su correo y contraseña
+      // Después de crear el usuario updateProfile establece el nombre de usuario
+      await updateProfile(userCredential.user, { displayName: signUpUser }); // userCredential obtiene el usuario, y el displayName lo guarda 
       toast.success("Usuario registrado correctamente", {
         position: "top-center",
         autoClose: 5000,
