@@ -36,7 +36,14 @@ function NavDashboard() {
   }, []);
 
   return (
-    <NextUINavbar>
+    <NextUINavbar
+      isBordered
+      className="work-sans-aesthetic"
+      style={{
+        backgroundColor: "rgba(0, 0, 0, 0.800)",
+        backdropFilter: "blur(6px)",
+      }}
+    >
       <NavbarContent>
         <NavbarBrand>
           <GrMagic className="text-purple-500" />
