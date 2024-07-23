@@ -12,7 +12,7 @@ import {
 
 function Services() {
   return (
-    <div className="relative flex items-center justify-center overflow-hidden h-screen dark:bg-gray-800">
+    <div className="relative flex items-center justify-center overflow-hidden h-screen">
       <div className="relative z-20 max-w-screen-xl p-4 px-4 mx-auto sm:px-6 lg:px-8 py-26">
         <div className="relative">
           <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
@@ -20,11 +20,11 @@ function Services() {
               <p className="work-sans-aesthetic text-xs mx-3 font-semibold leading-6 text-purple-200 uppercase">
                 Servicios
               </p>
-              <h1 className="kanit-black mt-2 font-bold sm:text-4xl lg:text-6xl leading-8 sm:leading-10 text-purple-600 dark:text-white">
+              <h1 className="kanit-black mt-2 font-bold sm:text-4xl lg:text-6xl leading-8 sm:leading-10 text-purple-600">
                 Innovando para un ambiente más seguro
               </h1>
 
-              <p className="work-sans-aesthetic mt-5 text-lg leading-6 text-gray-500 dark:text-gray-300">
+              <p className="work-sans-aesthetic mt-5 text-lg leading-6 text-gray-500">
                 Ofrecemos soluciones automatizadas para tu hogar o empresa,
                 proporcionando un monitoreo continuo y preciso de la calidad del
                 aire.
@@ -35,7 +35,7 @@ function Services() {
                     <span className="flex items-center justify-center flex-shrink-0 w-6 h-6">
                       <MdTrackChanges className="w-4 h-4 text-purple-500" />
                     </span>
-                    <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
+                    <span className="ml-4 text-base font-medium leading-6 text-gray-500">
                       Monitoreo
                     </span>
                   </div>
@@ -45,7 +45,7 @@ function Services() {
                     <span className="flex items-center justify-center flex-shrink-0 w-6 h-6">
                       <MdAutorenew className="w-4 h-4 text-purple-500" />
                     </span>
-                    <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
+                    <span className="ml-4 text-base font-medium leading-6 text-gray-500">
                       Automatización
                     </span>
                   </div>
@@ -55,7 +55,7 @@ function Services() {
                     <span className="flex items-center justify-center flex-shrink-0 w-6 h-6">
                       <MdCrisisAlert className="w-4 h-4 text-purple-500" />
                     </span>
-                    <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
+                    <span className="ml-4 text-base font-medium leading-6 text-gray-500">
                       Alertas en tiempo real
                     </span>
                   </div>
@@ -65,7 +65,7 @@ function Services() {
                     <span className="flex items-center justify-center flex-shrink-0 w-6 h-6">
                       <MdEqualizer className="w-4 h-4 text-purple-500" />
                     </span>
-                    <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
+                    <span className="ml-4 text-base font-medium leading-6 text-gray-500">
                       Análisis de datos
                     </span>
                   </div>
