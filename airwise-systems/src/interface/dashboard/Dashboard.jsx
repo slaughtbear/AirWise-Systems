@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import NavDashboard from "./Navbar/NavDashboard";
 import { auth } from "../../firebase/FirebaseConfig"; // Servicio de autenticación de Firebase
 import { onAuthStateChanged } from "firebase/auth"; // Servicio para obtener datos de usuarios de Firebase
+import { CardUsageExample } from './CardUsageExample';
+import { ProgressCircleHero } from './ProgressCircleHero';
 
 function Dashboard() {
     const [user, setUser] = useState(null); // Estado para guardar el usuario logueado
@@ -39,6 +41,8 @@ function Dashboard() {
                     <p>Tu ID único es: {user.uid}</p>
                     <p>Tu correo es: {user.email}</p>
                     {/* Aquí puedes construir la interfaz para el usuario autenticado */}
+                    <CardUsageExample />
+                    <ProgressCircleHero />
                 </div>
             ) : (
                 <div>
