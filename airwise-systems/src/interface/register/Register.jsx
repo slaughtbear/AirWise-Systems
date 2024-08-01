@@ -16,6 +16,7 @@ function Register() {
   // Uso de navegación de rutas dentro del componente
   const navigate = useNavigate();
 
+  /*
   // Inicialización del estado "userInfo", objeto que contiene:
   const [userInfo, setUserInfo] = useState({
     // Propiedades del formulario que se inicializan como vacías
@@ -24,6 +25,7 @@ function Register() {
     signUpPassword: "",
     signUpConfirmPass: "",
   });
+  */
 
   // Inicialización del hook useForm que registra los datos proporcionados por el usuario
   // register: observa todo elemento dentro del formulario, vía por la cual la librería sabe que cambios se producen en cada campo
