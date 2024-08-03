@@ -1,7 +1,7 @@
 import CardTemp from "./Cards/CardTemp";
 import CardHum from "./Cards/CardHum";
 import CardCO from "./Cards/CardCO";
-import CardHumo from "./Cards/CardHumo";
+//import CardHumo from "./Cards/CardHumo";
 
 function CardContainer() {
   return (
@@ -9,7 +9,6 @@ function CardContainer() {
       <CardTemp />
       <CardHum />
       <CardCO />
-      <CardHumo />
     </div>
   );
 }
