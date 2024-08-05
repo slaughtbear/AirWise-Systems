@@ -2,7 +2,6 @@ import { initializeApp } from 'firebase/app'; // Inicialización de un app de Fi
 import { getAuth } from "firebase/auth"; // Servicio de autenticación 
 import { getFirestore } from 'firebase/firestore'; // Servicio de Firestore
 import { getDatabase } from "firebase/database"; // Servicio de Base de Datos en tiempo real
-// test
 
 // Objeto con las credenciales de la aplicación
 const firebaseConfig = {
