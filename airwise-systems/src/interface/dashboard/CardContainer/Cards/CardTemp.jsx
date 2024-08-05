@@ -17,11 +17,21 @@ function CardTemp() {
     });
   }, []);
 
+  const getColor = (temp) => {
+    if (temp <= 10) {
+      return "blue";
+    } else if (temp <= 25) {
+      return "green";
+    } else {
+      return "red";
+    }
+  };
+
   return (
     <Card className="py-4 bg-stone-900">
       <CardHeader className="pb-2 pt-2 px-4 flex-col items-start">
         <div className="flex items-center">
-          <FaThermometerHalf className="text-purple-200 mr-2 w-5 h-5" />
+          <FaThermometerHalf className={`text-${getColor(temperature)}-200 mr-2 w-5 h-5`} />
           <h4 className="font-bold text-purple-200 text-large work-sans-aesthetic">
             Temperatura
           </h4>
@@ -32,9 +42,9 @@ function CardTemp() {
           className="px-4"
           value={temperature}
           size="xl"
-          color="purple"
+          color={getColor(temperature)}
         >
-          <span className="text-xs font-medium text-purple-200 work-sans-aesthetic">
+          <span className={`text-xs font-medium text-${getColor(temperature)}-200 work-sans-aesthetic`}>
             {temperature}°
           </span>
         </ProgressCircle>
