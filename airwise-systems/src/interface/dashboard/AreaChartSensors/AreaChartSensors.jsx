@@ -3,46 +3,28 @@ import {Card} from "@nextui-org/card";
 
 const chartdata = [
   {
-    date: "Jan 23",
-    Temperatura: 23,
-    Humedad: 45,
-    CO2: 400,
-    Humo: 10,
+    date: "May 25",
+    Temperatura: 30,
+    Humedad: 20,
+    CO2: 0,
   },
   {
-    date: "Feb 23",
-    Temperatura: 25,
-    Humedad: 50,
-    CO2: 420,
-    Humo: 12,
+    date: "Jun 01",
+    Temperatura: 32,
+    Humedad: 15,
+    CO2: 100,
   },
   {
-    date: "Mar 23",
-    Temperatura: 20,
-    Humedad: 55,
-    CO2: 450,
-    Humo: 8,
+    date: "Jul 15",
+    Temperatura: 35,
+    Humedad: 10,
+    CO2: 100,
   },
   {
-    date: "Apr 23",
-    Temperatura: 22,
-    Humedad: 48,
-    CO2: 430,
-    Humo: 9,
-  },
-  {
-    date: "May 23",
-    Temperatura: 24,
-    Humedad: 53,
-    CO2: 410,
-    Humo: 11,
-  },
-  {
-    date: "Jun 23",
-    Temperatura: 26,
-    Humedad: 47,
-    CO2: 440,
-    Humo: 10,
+    date: "Aug 03",
+    Temperatura: 33,
+    Humedad: 20,
+    CO2: 100,
   },
 ];
 
@@ -54,8 +36,8 @@ export function AreaChartSensors() {
           className="h-72 w-full"
           data={chartdata}
           index="date"
-          categories={["Temperatura", "Humedad", "CO2", "Humo"]}
-          colors={["blue", "purple", "green", "red"]}
+          categories={["Temperatura", "Humedad", "CO2"]}
+          colors={["red", "blue", "green"]}
           yAxisWidth={40}
         />
       </Card>
