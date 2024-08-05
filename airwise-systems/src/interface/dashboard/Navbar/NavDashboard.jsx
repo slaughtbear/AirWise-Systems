@@ -74,8 +74,6 @@ function NavDashboard() {
               </p>
               <p className="font-semibold">{username}</p>
             </DropdownItem>
-            <DropdownItem key="settings">Configuraciones</DropdownItem>
-            <DropdownItem key="analytics">Analíticas</DropdownItem>
             <DropdownItem key="logout" color="danger" onClick={handleLogout}>
               Cerrar sesión
             </DropdownItem>
