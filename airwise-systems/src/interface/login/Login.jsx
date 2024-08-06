@@ -82,7 +82,7 @@ function Login() {
 
               <h1 className="uppercase kanit-black mt-2 text-2xl font-bold text-purple-600 sm:text-3xl md:text-4xl">
                 Air-Wise Systems
-              </h1>
+              </h1> 
             </div>
 
             <form
